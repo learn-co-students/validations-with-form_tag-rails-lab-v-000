@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :authors
+  resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -26,7 +28,7 @@ Rails.application.routes.draw do
   #     end
   #   end
 
-  # Example resource route with sub-resources:
+  # Example resource route with sub-resources:ller actions for show, new, and edit
   #   resources :products do
   #     resources :comments, :sales
   #     resource :seller
