@@ -1,15 +1,7 @@
 RSpec.describe "authors/new", type: :feature do
   before(:each) { visit new_author_path }
 
-  describe "a blank form" do
-    it "does not render an error list" do
-      expect(page).not_to have_selector("#error_explanation")
-    end
 
-    it "does not render error fields" do
-      expect(page).not_to have_selector(".field_with_errors")
-    end
-  end
 
   context "invalid submissions" do
     let(:invalid_attributes) do
