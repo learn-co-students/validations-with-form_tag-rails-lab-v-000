@@ -19,3 +19,12 @@
   background-color: red;
   display: table;
 }
+
+label {
+  display: inline-block;
+  width: 100px;
+}
+
+form div {
+  padding: 5px 0;
+}
