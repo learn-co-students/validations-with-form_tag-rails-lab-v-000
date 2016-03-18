@@ -1,2 +1,6 @@
 <h2><%= @author.name %></h2>
-<a href="mailto:<%= @author.email %>"><%= @author.email %></a>
+<p><a href="mailto:<%= @author.email %>"><%= @author.email %></a></p>
+<% if @author.phone_number %>
+    <p><%= @author.phone_number %></p>
+<% end %>
+<p><%= link_to "Edit Author", edit_author_path(@author) %></p>
