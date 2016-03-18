@@ -1,5 +1,6 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :edit, :update]
+  before_action :saved_name, only: [:edit, :update]
   
   def show
   end
@@ -23,15 +24,18 @@ class AuthorsController < ApplicationController
   end
   
   def update
-    if Post.new(post_params).valid?
-      @post.update(post_params)
-      redirect_to post_path(@post)
+    if @author.update(author_params)
+      redirect_to author_path(@author)
     else
       render :edit
     end
   end
 
   private
+  
+  def saved_name
+    @name = Author.find(params[:id]).name
+  end
   
   def set_author
     @author = Author.find(params[:id])
