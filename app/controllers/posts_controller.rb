@@ -1,6 +1,13 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update]
+  before_action :saved_title, only: [:edit, :update]
+  
+  def index 
+    
+  end
+  
   def show
-    @post = Post.find(params[:id])
+    
   end
   
   def new 
@@ -18,21 +25,28 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
-    if Post.new(post_params).valid?
-      @post.update(post_params)
+    # binding.pry
+    if @post.update(post_params)
       redirect_to post_path(@post)
     else
+      @title = saved_title
       render :edit
     end
   end
 
   private
 
+  def saved_title
+    @title = Post.find(params[:id]).title
+  end
+
+  def set_post 
+    @post = Post.find(params[:id])
+  end
+  
   def post_params
     params.permit(:title, :category, :content)
   end
