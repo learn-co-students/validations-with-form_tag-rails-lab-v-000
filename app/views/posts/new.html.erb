@@ -1,0 +1,16 @@
+<h1>New Post</h1>
+
+<%=form_tag posts_path do%>
+
+<label>Title</label>
+<%=text_field :title, @post.title%><br>
+
+<label>Category</label>
+<%=text_field :category, @post.category%><br>
+
+<label>Content</label>
+<%=text_field :content, @post.content%><br>
+
+<%=submit_tag "Submit Post"%>
+
+<%end%>
