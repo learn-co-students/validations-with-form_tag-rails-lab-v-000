@@ -1,14 +1,14 @@
 class PostsController < ApplicationController
   def show
-    @post = Post.find(params[:id])
+    set_post
   end
 
   def edit
-    @post = Post.find(params[:id])
+    set_post
   end
 
   def update
-    @post = Post.find(params[:id])
+    set_post
 
     @post.update(post_params)
 
@@ -16,6 +16,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.permit(:title, :category, :content)
