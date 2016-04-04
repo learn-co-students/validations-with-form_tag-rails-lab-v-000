@@ -1,4 +1,4 @@
-<h2>Editing "<%= @post.title %>"</h2>
+<h2>Create an Post</h2>
 <%= form_tag("/posts") do %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -38,5 +38,5 @@
     <%= text_field_tag "category", @post.category %>
   </div>
 
-  <%= submit_tag "Update" %>
+  <%= submit_tag "Create" %>
 <% end %>
