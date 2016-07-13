@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :authors, only: [:name, :email, :phone_number]
-  resources :posts, only: [:title, :category, :content]
+  resources :authors, only: [:index, :new, :create, :edit, :update, :show]
+  resources :posts, only: [:index, :new, :create, :edit, :update, :show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

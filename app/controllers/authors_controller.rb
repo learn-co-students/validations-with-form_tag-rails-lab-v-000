@@ -23,12 +23,15 @@ class AuthorsController < ApplicationController
 
   def update
     @author = Author.find(params[:id])
-    @author.update(author_params)
+    @author= Author.update(author_params)
+
+    if @author.valid?
+      @author.save
+    else
+      render :edit
+    end
   end
 
-  def show
-    @author = Author.find(params[:id])
-  end
 
   private
 
