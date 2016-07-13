@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :authors, only: [:name, :email, :phone_number]
+  resources :posts, only: [:title, :category, :content]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
