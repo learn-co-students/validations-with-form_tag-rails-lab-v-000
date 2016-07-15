@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <!--
+  One way to conditionally "error-ify" a field in the form,
+  targeting the div containing the field
+  -->
   <% if @author.errors[:name].empty? %>
     <div class="field">
   <% else %>
@@ -20,6 +24,9 @@
     <%= text_field_tag "name", @author.name %>
   </div>
 
+  <!--
+  Another way to conditionally "error-ify" a field in the form, targeting the div containing the field
+  -->
   <div class="field<%= ' field_with_errors' if @author.errors[:email].any? %>">
     <%= label_tag "email", "Email" %>
     <%= text_field_tag "email", @author.email %>
