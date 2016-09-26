@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  #  this finds the post by id for each view
+  #  this callback finds the post by id for each view
   before_action :set_post!, only: [:show, :edit, :update]
 
   def show
@@ -15,6 +15,11 @@ class PostsController < ApplicationController
 
       redirect_to post_path(@post)
     else
+      # below the .errors method to check the error messages for a specific attribute in this case for each field in the form
+      # @post.errors[:title]
+      # @post.errors[:category]
+      # @post.errors[:content]
+
       render :edit
     end
   end
