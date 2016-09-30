@@ -14,9 +14,9 @@ class AuthorsController < ApplicationController
       redirect_to author_path(@author)
     else
       # below the .errors method to check the error messages for a specific attribute in this case for each field in the form
-      # @author.errors[:name]
-      # @author.errors[:email]
-      # @author.errors[:phone_number]
+      # @author.errors[:name]  for reference
+      # @author.errors[:email] for reference
+      # @author.errors[:phone_number] for reference
 
       render :new
     end
