@@ -39,7 +39,6 @@ RSpec.describe "posts/edit", type: :feature do
     end
 
     it "has error class on bad fields" do
-      binding.pry
       expect(page).to have_css(".field_with_errors input[name=title]")
       expect(page).to have_css(".field_with_errors input[name=category]")
       expect(page).to have_css(".field_with_errors textarea[name=content]")
