@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :posts, only: [:index, :show, :new, :create, :update]
-  resources :authors, only: [:index, :show, :new, :create, :update]
+  resources :posts, only: [:show, :new, :create, :update]
+  resources :authors, only: [:show, :new, :create, :update]
 
   get 'posts/:id/edit' => 'posts#edit', as: :edit_post
   # The priority is based upon order of creation: first created -> highest priority.
