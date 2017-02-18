@@ -53,4 +53,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  resources :authors
+
+  get '/posts/:id', to: 'posts#show', as: :post
+  patch '/posts/:id', to: 'posts#update'
+  get '/posts/:id/edit', to: 'posts#edit', as: :edit_post
 end
