@@ -1,23 +1,38 @@
 class PostsController < ApplicationController
-  def show
-    @post = Post.find(params[:id])
-  end
+    #[:show, :new, :edit, :create, :update]
+    def show
+        @post = Post.find(params[:id])
+    end
 
-  def edit
-    @post = Post.find(params[:id])
-  end
+    def new
+    end
 
-  def update
-    @post = Post.find(params[:id])
+    def create
+        @post = Post.new(post_params)
+        if @post.save
+            redirect_to post_path(@post)
+        else
+            render :new
+        end
+    end
 
-    @post.update(post_params)
+    def edit
+        @post = Post.find(params[:id])
+    end
 
-    redirect_to post_path(@post)
-  end
+    def update
+        @post = Post.find(params[:id])
 
-  private
+        if @post.update(post_params)
+            redirect_to post_path(@post)
+        else
+            render :edit
+        end
+    end
 
-  def post_params
-    params.permit(:title, :category, :content)
-  end
+    private
+
+    def post_params
+        params.permit(:title, :category, :content)
+    end
 end
