@@ -14,7 +14,7 @@ RSpec.describe AuthorsController do
 
   describe "showing an author" do
     it "shows an author" do
-      get :show, id: @author.id
+      get :show, params: {id: @author.id}
       expect(found).to eq(@author)
     end
   end
