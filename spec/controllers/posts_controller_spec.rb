@@ -14,7 +14,7 @@ RSpec.describe PostsController do
 
   describe "showing a post" do
     it "shows a post" do
-      get :show, id: @article.id
+      get :show, params: {id: @article.id}
       expect(found).to eq(@article)
     end
   end
@@ -76,4 +76,3 @@ RSpec.describe PostsController do
     end
   end
 end
-
