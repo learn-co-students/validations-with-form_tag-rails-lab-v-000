@@ -1,17 +1,17 @@
-<h2>Create an Author</h2>
+<h2>Editing "<%= @author.name %>"</h2>
 
-<% if @author.errors.any? %>
-  <div id="error_explanation">
-    <h3>There were some errors:</h3>
-    <ul>
-      <% @author.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= form_tag author_path(@author), method: "patch" do %>
+  <% if @author.errors.any? %>
+    <div id="error_explanation">
+      <h3>There were some errors:</h3>
+      <ul>
+        <%  @author.errors.full_messages.each do |msg| %>
+          <li> <%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<%= form_tag authors_path, method: "post" do %>
   <div class="field <%= 'field_with_errors' if @author.errors[:name].any? %>">
     <%= label_tag "name", "Name" %>
     <%= text_field_tag "name", @author.name %>
@@ -23,9 +23,10 @@
   </div>
 
   <div class="field <%= 'field_with_errors' if @author.errors[:phone_number].any? %>">
-    <%= label_tag "phone_number", "Phone Number" %>
+    <%= label_tag "phone_number", "Phone number" %>
     <%= text_field_tag "phone_number", @author.phone_number %>
   </div>
 
-  <%= submit_tag "Create" %>
+  <%=  submit_tag "Update" %>
+
 <% end %>
