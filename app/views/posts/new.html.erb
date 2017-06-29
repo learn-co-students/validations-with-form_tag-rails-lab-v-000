@@ -1,4 +1,4 @@
-<h1>Edit a Post</h1>
+<h1>Create a Post</h1>
 
 <%= form_tag("/posts") do %>
 
@@ -47,6 +47,6 @@
       <%= text_area_tag "content", @post.content %>
     </div>
 
-    <%= submit_tag "Update" %>
+    <%= submit_tag "Create" %>
 
 <% end %>
