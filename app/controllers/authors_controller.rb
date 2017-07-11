@@ -1,7 +1,10 @@
 class AuthorsController < ApplicationController
   before_action :set_author!, only: [:show, :edit, :update]
   
-
+  def index
+    @authors = Author.all
+  end
+  
   def show
   end
 
