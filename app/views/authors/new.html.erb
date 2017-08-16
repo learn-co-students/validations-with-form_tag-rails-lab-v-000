@@ -13,17 +13,17 @@
     </div>
   <% end %>
 
-  <div class=<%= @author.errors[:name].any? ? "field_with_errors" : "field" %>>
+  <div class=<%= @author.errors[:name].empty? ? "field" : "field_with_errors" %>>
     <%= label_tag "name", "Name" %>
     <%= text_field_tag "name", @author.name %>
   </div>
 
-  <div class=<%= @author.errors[:email].any? ? "field_with_errors" : "field" %>>
+  <div class=<%= @author.errors[:email].empty? ? "field" : "field_with_errors" %>>
     <%= label_tag "email", "Email" %>
     <%= text_field_tag "email", @author.email %>
   </div>
 
-  <div class=<%= @author.errors[:phone_number].any? ? "field_with_errors" : "field" %>>
+  <div class=<%= @author.errors[:phone_number].empty? ? "field" : "field_with_errors" %>>
     <%= label_tag "phone_number", "Phone Number" %>
     <%= text_field_tag "phone_number", @author.phone_number %>
   </div>
