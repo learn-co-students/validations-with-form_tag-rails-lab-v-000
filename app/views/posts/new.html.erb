@@ -1,5 +1,5 @@
-<h2>Editing <%= @post.title %></h2>
-<%= form_tag post_path(@post), method: "PATCH" do %>
+<h2>New Post Form</h2>
+<%= form_tag posts_path do %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h3>There were <%= pluralize(@post.errors.count, "error") %>:</h3>
@@ -33,5 +33,5 @@
     <br />
     <%= text_area_tag "content", @post.content %>
   </div>
-  <%= submit_tag "Update" %>
+  <%= submit_tag "New" %>
 <% end %>
