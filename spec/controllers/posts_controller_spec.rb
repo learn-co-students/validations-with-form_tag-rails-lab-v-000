@@ -29,7 +29,9 @@ RSpec.describe PostsController do
     end
 
     it "updates successfully" do
+
       @article.update(new_attributes)
+
       expect(found.title).to eq(new_attributes[:title])
     end
 
@@ -76,4 +78,3 @@ RSpec.describe PostsController do
     end
   end
 end
-
