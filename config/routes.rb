@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get "/authors/:id", to: "authors#show", as: "author"
+  get "/authors/new", to: "authors#new", as: "new_author"
+  post "/authors", to: "authors#create"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
