@@ -8,9 +8,16 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    @author = Author.create(author_params)
-
-    redirect_to author_path(@author)
+    @author = Author.new(author_params)
+    if @author.valid?
+      @author = Author.create(author_params)
+      redirect_to author_path(@author)
+    else
+      # renders an error list
+      # prefills fields
+      #has error class on bad fields
+      render :new
+    end
   end
 
   private
