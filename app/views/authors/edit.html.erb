@@ -1,6 +1,6 @@
-<h2>Create an Author</h2>
+<h2>Update <%= @author.name %></h2>
 
-<%= form_tag authors_path, method: "post" do %>
+<%= form_tag author_path, method: "patch" do %>
   <% if @author.errors.any? %>
     <div id="error_explanation">
       <h2>There were some errors:</h2>
@@ -27,5 +27,5 @@
     <%= text_field_tag "phone_number", @author.phone_number %>
   </div>
 
-  <%= submit_tag "Create" %>
+  <%= submit_tag "Update" %>
 <% end %>
