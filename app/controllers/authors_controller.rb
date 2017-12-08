@@ -16,18 +16,18 @@ class AuthorsController < ApplicationController
     end
   end
 
-  def edit
-    @post.find(params[:id])
-  end
+  # def edit
+  #   @post.find(params[:id])
+  # end
 
-  def update
-    @author = Author.find(params[:id])
-    if @author.update(author_params)
-      redirect_to author_path
-    else 
-      render :edit
-    end
-  end
+  # def update
+  #   @author = Author.find(params[:id])
+  #   if @author.update(author_params)
+  #     redirect_to author_path
+  #   else 
+  #     render :edit
+  #   end
+  # end
 
   private
 

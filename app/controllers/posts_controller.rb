@@ -16,18 +16,18 @@ class PostsController < ApplicationController
     end
   end
 
-  def new
-    @post = Post.new(post_params)
-  end
+  # def new
+  #   @post = Post.new(post_params)
+  # end
 
-  def create
-    @post = Post.new(post_params)
-    if @post.save
-      redirect_to post_path
-    else
-      render :new
-    end
-  end
+  # def create
+  #   @post = Post.new(post_params)
+  #   if @post.save
+  #     redirect_to post_path
+  #   else
+  #     render :new
+  #   end
+  # end
 
   private
 
