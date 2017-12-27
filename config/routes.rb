@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :authors, only: [:index, :show, :new, :create, :edite, :update]
+  resources :posts, only: [:index, :show, :new, :create, :edite, :update]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
