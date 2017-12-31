@@ -3,7 +3,7 @@
 <h2>Create a Post</h2>
 
 <%= form_tag posts_path, method: "patch" do %>
-  <% if @posts.errors.any? %>
+  <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2>There were some errors:</h2>
       <ul>
