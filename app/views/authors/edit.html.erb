@@ -1,10 +1,10 @@
-<h2>Create an Author</h2>
-<%= form_tag ('/authors') do %>
-  <% if @author.errors.any? %>
+<h2>Editing "<%= @uthor.name %>"</h2>
+<%= form_tag ('/authors') do
+  <% if @pauthor.errors.any? %>
     <div id="error_explanation">
       <h2>There were some errors:</h2>
       <ul>
-        <% @author.errors.full_messages.each do |message| %>
+        <% @pauthor.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -26,5 +26,5 @@
     <%= text_field_tag "phone_number", @author.phone_number %>
   </div>
 
-  <%= submit_tag "Create Author" %>
+  <%= submit_tag "Edit Author" %>
 <% end %>
