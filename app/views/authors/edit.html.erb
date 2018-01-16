@@ -1,0 +1,22 @@
+<h1>Edit Author</h1>
+
+<% if @author.errors.any? %>
+  <div id="error_explanation">
+    <h2>There were some errors:</h2>
+    <ul>
+      <% @author.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <%end%>
+
+<%=form_for(@author) do |f| %>
+
+  <%= f.text_field :name, value: => @author.name %>
+  <%= f.text_field :email, value: => @author.email %>
+  <%= f.text_field :phone_number, value: => @author.phone_number %>
+
+  <%= f.submit "Update Author" %>
+
+  <% end %>
