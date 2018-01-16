@@ -26,6 +26,9 @@ Rails.application.routes.draw do
   #     end
   #   end
 
+  resources :posts, only: [:new, :create, :show, :index, :edit, :update]
+  resources :authors, only: [:new, :create, :show, :index, :edit, :update]
+
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
