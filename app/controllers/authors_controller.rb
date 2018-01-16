@@ -9,8 +9,25 @@ class AuthorsController < ApplicationController
 
   def create
     @author = Author.create(author_params)
+    if @author.errors.full_messages.size > 0
+      render :new
+    else
+      redirect_to author_path(@author)
+    end
+  end
 
-    redirect_to author_path(@author)
+  def edit
+    @author = Author.find(params[:id])
+  end
+
+  def update
+    @author = Author.find(params[:id])
+    @author.update(author_params)
+    if @author.errors.full_messages.size > 0
+      render :edit
+    else
+      redirect_to author_path(@author)
+    end
   end
 
   private
