@@ -1,3 +1,4 @@
+require 'rails_helper'
 RSpec.describe "authors/new", type: :feature do
   before(:each) { visit new_author_path }
 
