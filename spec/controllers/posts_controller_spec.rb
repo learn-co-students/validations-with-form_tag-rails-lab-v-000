@@ -1,4 +1,5 @@
 require "rails_helper"
+require "pry"
 
 RSpec.describe PostsController do
   let(:attributes) do
@@ -14,6 +15,7 @@ RSpec.describe PostsController do
 
   describe "showing a post" do
     it "shows a post" do
+      #binding.pry
       get :show, id: @article.id
       expect(found).to eq(@article)
     end
