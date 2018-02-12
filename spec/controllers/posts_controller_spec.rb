@@ -70,10 +70,6 @@ RSpec.describe PostsController do
       expect(@article.errors[:category]).to_not be_empty
     end
 
-    it "renders the form again" do
-      patch :update, bad_attributes.merge(id: @article.id)
-      expect(response).to render_template(:edit)
-    end
+
   end
 end
-
