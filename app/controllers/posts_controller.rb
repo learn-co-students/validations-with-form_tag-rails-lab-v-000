@@ -4,15 +4,23 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+     @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
-
+     @post = Post.find(params[:id])
     @post.update(post_params)
-
+    if @post.valid?
     redirect_to post_path(@post)
+    else
+    render :edit
+    end
+  end
+  
+  def errors_message
+   errors.add(:title, "Name can't be blank") 
+   errors.add(:content, "Content too short")
+   errors.add(:category, "Invalid category") 
   end
 
   private
