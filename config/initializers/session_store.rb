@@ -1,3 +1,3 @@
 # Be sure to restart your server when you modify this file.
 
-Rails.application.config.session_store :cookie_store, key: '_validations-with-form_tag-rails-lab_session'
+Rails.application.config.session_store :cookie_store, key: '_validations-in-controller-actions-rails-lab_session'
