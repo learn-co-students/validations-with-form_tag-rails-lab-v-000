@@ -10,6 +10,7 @@ class AuthorsController < ApplicationController
   # GET /authors/1
   # GET /authors/1.json
   def show
+    set_author
   end
 
   # GET /authors/new
@@ -69,6 +70,6 @@ class AuthorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def author_params
-      params.require(:author).permit(:name, :email, :phone_number)
+      params.permit(:name, :email, :phone_number)
     end
 end
