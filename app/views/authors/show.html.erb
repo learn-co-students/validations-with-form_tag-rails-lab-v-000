@@ -1,2 +1,19 @@
-<h2><%= @author.name %></h2>
-<a href="mailto:<%= @author.email %>"><%= @author.email %></a>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @author.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @author.email %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @author.phone_number %>
+</p>
+
+<%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Back', authors_path %>
