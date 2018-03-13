@@ -18,6 +18,12 @@ class AuthorsController < ApplicationController
   end
 
   def update
+    @author = Author.find(params[:id])
+    if @author.udpate(author_params)
+      redirect_to author_path
+    else
+      render :edit
+    end
   end
 
   def edit
