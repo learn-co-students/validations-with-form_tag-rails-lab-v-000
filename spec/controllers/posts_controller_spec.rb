@@ -1,4 +1,5 @@
 require "rails_helper"
+require 'pry'
 
 RSpec.describe PostsController do
   let(:attributes) do
@@ -71,9 +72,9 @@ RSpec.describe PostsController do
     end
 
     it "renders the form again" do
+      
       patch :update, bad_attributes.merge(id: @article.id)
       expect(response).to render_template(:edit)
     end
   end
 end
-
