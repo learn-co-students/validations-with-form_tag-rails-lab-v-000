@@ -1,0 +1,21 @@
+NOTE: This is basically trash
+
+<%= form_tag sparrows_path, method: "post" do %>
+  <% if @sparrow.errors.any? %>
+    <div id="error_explanation">
+      <h3>There were some errors:</h3>
+      <ul>
+        <% @sparrow.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field<%= ' field_with_errors' if @person.errors[:name].any? %>">
+     <%= label_tag "name", "Name" %>
+     <%= text_field_tag "name", @person.name %>
+  </div>
+
+  <%= submit_tag "Create" %>
+<% end %>

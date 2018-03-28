@@ -1,0 +1,9 @@
+<h1>This is a List of all the Sparrows</h1>
+
+
+<% @sparrows.each do |tzipor| %>
+  <p>
+    <h2><%= tzipor.name %></h2>
+    <a href="mailto:<%= tzipor.email %>"><h3><%= tzipor.email %></h3></a>
+  </p><br><br>
+<% end %>
