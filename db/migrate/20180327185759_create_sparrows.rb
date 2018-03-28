@@ -1,6 +1,6 @@
-class CreateAuthors < ActiveRecord::Migration
+class CreateSparrows < ActiveRecord::Migration
   def change
-    create_table :authors do |t|
+    create_table :sparrows do |t|
       t.string :name
       t.string :email
       t.string :phone_number
