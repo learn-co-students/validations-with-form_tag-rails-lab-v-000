@@ -1,0 +1,16 @@
+<h1>New Post</h1>
+
+<% if @post.errors.any? %>
+<div id="error_explanation">
+  <% @post.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</div>
+<% end %>
+
+<%= form_for(@post) do |f| %>
+  <%= f.text_field :title, placeholder: @post.title %><br>
+  <%= f.text_field :category, placeholder: @post.category %><br>
+  <%= f.text_area :content, placeholder: @post.content %><br>
+  <%= f.submit %>
+<% end %>
