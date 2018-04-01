@@ -53,4 +53,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  resources :authors, only: [:show,:edit,:update,:create,:new]
+  resources :posts, only: [:show,:edit,:update,:create,:new]
 end
