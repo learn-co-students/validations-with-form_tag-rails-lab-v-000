@@ -1,7 +1,7 @@
 <h2>Create an Author</h2>
 <%= form_tag authors_path, method: "post" do %>
   <% if @author.errors.any? %>
-    < div id="error_explanation">
+    <div id="error_explanation">
       <h2>There were some errors:</h2>
       <ul>
         <% @author.errors.full_messages.each do |message| %>
@@ -19,6 +19,11 @@
    <div class="field<%= ' field_with_errors' if @author.errors[:email].any? %>">
      <%= label_tag "email", "Email" %>
      <%= text_field_tag "email", @author.email %>
+   </div>
+
+    <div class="field<%= ' field_with_errors' if @author.errors[:phone_number].any? %>">
+     <%= label_tag "phone_number", "Phone Number" %>
+     <%= text_field_tag "phone_number", @author.phone_number %>
    </div>
   
    <%= submit_tag "Create" %>

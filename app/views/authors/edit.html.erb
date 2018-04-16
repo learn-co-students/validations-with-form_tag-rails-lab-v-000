@@ -5,7 +5,9 @@
 		conditionally wrap each field in a .field_with_errors div if it has errors-->
 <h2>Edit "<%=@author.name%>"</h2>
 	<%= form_tag authors_path, method: "patch" do %>
-	<div class="field">
+	<% if @author.errors.any? %>
+	<div id="error_explanation">
+		<h3>There were some errors:
  		<%= label_tag "name", "Name" %>
  		<p>Cannot be blank</p>
  		<%= text_field_tag "name", @author.name %>

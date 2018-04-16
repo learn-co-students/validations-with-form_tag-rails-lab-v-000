@@ -25,10 +25,10 @@ class PostsController < ApplicationController
   def update #define the "valid path"; define the "invalid path"
     @post = Post.find(params[:id])
 
-    if @post.valid?
+    if @post.update(post_params)
        redirect_to post_path(@post)
      else
-      render :update
+      render :edit
     end
   end
 
