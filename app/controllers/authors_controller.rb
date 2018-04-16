@@ -7,10 +7,17 @@ class AuthorsController < ApplicationController
     @author = Author.new
   end
 
-  def create
+  def edit
+    #define controller action
+  end
+
+  def create #define the "valid path"; define the "invalid path"
     @author = Author.create(author_params)
 
     redirect_to author_path(@author)
+  end
+
+  def update #define the "valid path"; define the "invalid path"
   end
 
   private
