@@ -1,0 +1,14 @@
+<!--create form with form_tag
+	pre-fill already submitted forms with invalid data
+	display list of errors at top of form when invalid action is attempted
+	contain these in element id of error_explanation, each error has its own <li>
+		conditionally wrap each field in a .field_with_errors div if it has errors-->
+<h2>Edit</h2>
+<%= form_tag authors_path, method: "post" do %>
+  Name: <%= text_field_tag "name", @author.name %>
+  Email:<%= text_field_tag "email", @author.email %>
+  Phone Number: <%= text_field_tag "phone_number", @author.phone_number %>
+ 
+  <%= submit_tag "Edit" %>
+<% end %>
+

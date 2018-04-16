@@ -1,23 +1,33 @@
 class AuthorsController < ApplicationController
-  def show
+  def show #define
     @author = Author.find(params[:id])
   end
 
-  def new
+  def new #define
     @author = Author.new
   end
 
-  def edit
-    #define controller action
+  def edit #define
+    @author = Author.find(params[:id])
   end
 
   def create #define the "valid path"; define the "invalid path"
-    @author = Author.create(author_params)
-
-    redirect_to author_path(@author)
+    @author = Author.new(author_params)
+    
+    if @author.valid?
+      @author.save
+      redirect_to author_path(@author)
+    else
+      render :new
+    end
   end
 
   def update #define the "valid path"; define the "invalid path"
+    @author = Author.find(params[:id])
+
+    @author.update(author_params)
+
+    redirect_to author_path(@author)
   end
 
   private
