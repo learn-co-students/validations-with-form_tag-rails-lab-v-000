@@ -1,0 +1,29 @@
+<!--create form with form_tag
+	pre-fill already submitted forms with invalid data
+	display list of errors at top of form when invalid action is attempted
+	contain these in element id of error_explanation, each error has its own <li>
+		conditionally wrap each field in a .field_with_errors div if it has errors-->
+<h2>Edit "<%=@author.name%>"</h2>
+	<%= form_tag authors_path, method: "patch" do %>
+	<% if @author.errors.any? %>
+	<div id="error_explanation">
+		<h3>There were some errors:
+ 		<%= label_tag "name", "Name" %>
+ 		<p>Cannot be blank</p>
+ 		<%= text_field_tag "name", @author.name %>
+  	</div>
+
+ 	<div class="field">
+ 		<%= label_tag "email", "Email" %>
+ 		<p>Must be unique</p>
+ 		<%= text_field_tag "email", @author.email %>
+ 	</div>
+
+ 	<div class="field">
+    	<%= label_tag "phone_number", "Phone_Number" %>
+    	<p>Must be 10 digits</p>
+    	<br />
+    	<%= text_field_tag "phone_number", @author.phone_number %>
+  	</div>
+  <%= submit_tag "Update" %>
+<% end %>
