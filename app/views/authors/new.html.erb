@@ -2,17 +2,17 @@
 <%= form_tag authors_path, method: "post" do %>
     <%= label_tag "name", "Name" %>
     <div class="field<%= ' field_with_errors' if @author.errors[:name].any? %>">
-        <%= text_field_tag "name" %>
+        <%= text_field_tag "name", @author.name %>
     </div>
 
     <%= label_tag "email", "Email" %>
     <div class="field<%= ' field_with_errors' if @author.errors[:email].any? %>">
-      <%= text_field_tag "email" %>
+      <%= text_field_tag "email", @author.email %>
     </div>
 
     <%= label_tag "phone_number", "Phone Number" %>
     <div class="field<%= ' field_with_errors' if @author.errors[:phone_number].any? %>">
-      <%= text_field_tag "phone_number" %>
+      <%= text_field_tag "phone_number", @author.phone_number %>
     </div>
 
   <%= submit_tag "Create" %>
