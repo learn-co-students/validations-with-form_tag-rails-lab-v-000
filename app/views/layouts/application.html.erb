@@ -6,7 +6,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <% if !@errors.empty? %>
+    <div id="error_explanation">
+      <% @errors.full_messages.each do | error | %>
+        <li><%= error %></li>
+      <% end %>
+    </div>
+    <br/>
+  <% end %>
 <%= yield %>
 
 </body>
