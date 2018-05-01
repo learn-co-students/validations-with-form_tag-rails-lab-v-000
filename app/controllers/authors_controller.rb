@@ -8,6 +8,7 @@ class AuthorsController < ApplicationController
   end
 
   def edit
+    @author = Author.find(params[:id])
   end
 
   def update
@@ -28,7 +29,7 @@ class AuthorsController < ApplicationController
       render :edit
     end
   end
-      
+
 
   private
 
