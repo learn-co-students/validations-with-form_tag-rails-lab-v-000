@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   resources :authors, only: [:show, :create]
+
+  resources :posts, only: [:show, :create]
+  get '/posts/id/edit', to: 'posts#update', as: :edit_post
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
