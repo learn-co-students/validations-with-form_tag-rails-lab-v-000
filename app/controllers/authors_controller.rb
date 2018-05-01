@@ -26,7 +26,7 @@ class AuthorsController < ApplicationController
       @author.save
       redirect_to author_path(@author)
     else
-      render :edit
+      render :new
     end
   end
 
