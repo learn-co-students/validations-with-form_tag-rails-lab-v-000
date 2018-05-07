@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
   def show
-    binding.pry
+    # binding.pry
     @author = Author.find(params[:id])
     
   end
@@ -23,3 +23,15 @@ class AuthorsController < ApplicationController
     params.permit(:name, :email, :phone_number)
   end
 end
+# <%= form_tag("/people") do %>
+#   <% if @person.errors.any? %>
+#     <div id="error_explanation">
+#       <h2>There were some errors:</h2>
+#       <ul>
+#         <% @person.errors.full_messages.each do |message| %>
+#           <li><%= message %></li>
+#         <% end %>
+#       </ul>
+#     </div>
+#   <% end %>
+ 
