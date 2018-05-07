@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
   def show
-    # binding.pry
+    binding.pry
     @author = Author.find(params[:id])
     
   end
