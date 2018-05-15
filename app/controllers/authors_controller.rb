@@ -36,7 +36,7 @@ class AuthorsController < ApplicationController
   private
 
   def author_params
-    params.permit(:email, :name)
+    params.permit(:email, :name, :phone_number)
   end
 
   def set_author!
