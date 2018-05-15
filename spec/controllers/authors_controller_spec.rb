@@ -24,7 +24,7 @@ RSpec.describe AuthorsController do
       {
         name: "S. Bro",
         email: "bro@sbahj.info",
-        phone_number: "5558018045"
+        phone_number: "5558018045" 
       }
     end
     let(:bro_found) { Author.find_by(name: bro_attributes[:name]) }

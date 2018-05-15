@@ -1,6 +1,26 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  resources :posts, only: [:index, :show, :new, :edit, :create, :update]
+  patch 'posts/:id', to: 'posts#update'
+  resources :authors, only: [:index, :show, :new, :edit, :create, :update]
+  patch 'authors/:id', to: 'authors#update'
+
+  # or if anyone wanted to, they could also write it out word for word:
+  # get "/authors/new", to: "authors#new", as: "new_author"
+  # get "/authors/:id", to: "authors#show", as: "author"
+  # post "/authors", to: "authors#create"
+  # get "/authors/:id/edit", to: "authors#edit", as: "edit_author"
+  # patch "/authors/:id", to: "authors#update"
+  #
+  # get "/posts/new", to: "posts#new", as: "new_post"
+  # post "/posts", to: "posts#create"
+  # get "/posts/:id", to: "posts#show", as: "post"
+  # get "/posts/:id/edit", to: "posts#edit", as: "edit_post"
+  # patch "/posts/:id", to: "posts#update"
+
+
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
