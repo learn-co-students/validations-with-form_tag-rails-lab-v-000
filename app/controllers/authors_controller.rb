@@ -22,6 +22,7 @@ class AuthorsController < ApplicationController
   end
 
   def update
+    @author = Author.find(params[:id])
     @author.update(author_params)
     if @author.valid?
       @author.save
