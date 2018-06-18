@@ -1,3 +1,11 @@
+<% if @author.errors.any? %>
+  <ul id="error_explanation">
+    <% @author.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <h2>Create an Author</h2>
 <%= form_tag authors_path, method: "post" do %>
   <div class="field <%= 'field_with_errors' if @author.errors[:name].any? %>">
