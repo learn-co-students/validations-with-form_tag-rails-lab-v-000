@@ -14,9 +14,12 @@ class PostsController < ApplicationController
   def update
     set_post
 
-    @post.update(post_params)
+    if @post.update(post_params)
+      redirect_to post_path(@post)
+    else
+      render :edit
+    end
 
-    redirect_to post_path(@post)
   end
 
   private
