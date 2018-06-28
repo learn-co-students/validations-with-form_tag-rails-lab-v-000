@@ -11,6 +11,14 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def create
+    if @post.create(post_params)
+      redirect_to post_path(@post)
+    else
+      render :new
+    end
+  end
+
   def update
     set_post
 
