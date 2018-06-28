@@ -1,14 +1,18 @@
 class PostsController < ApplicationController
   def show
-    @post = Post.find(params[:id])
+    set_post
   end
 
   def edit
-    @post = Post.find(params[:id])
+    set_post
+  end
+
+  def new
+    @post = Post.new
   end
 
   def update
-    @post = Post.find(params[:id])
+    set_post
 
     @post.update(post_params)
 
@@ -19,5 +23,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.permit(:title, :category, :content)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end
