@@ -8,11 +8,28 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
-
+    show
     @post.update(post_params)
+    if @post.valid?
+      @post.save
+      redirect_to post_path(@post)
+    else
+      render :edit
+    end
+  end
 
-    redirect_to post_path(@post)
+  def new
+    @post = Post.new(post_params)
+  end
+
+  def create
+    @post = Post.new(post_params)
+    if @post.valid?
+      @post.save
+      redirect_to post_path(@post)
+    else
+      render :new
+    end
   end
 
   private
