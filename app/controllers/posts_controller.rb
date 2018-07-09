@@ -9,10 +9,15 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-
     @post.update(post_params)
 
-    redirect_to post_path(@post)
+    if @post.valid?
+      @post.save
+      redirect_to post_path(@post)
+    else
+      # re-render the :new template WITHOUT throwing away the invalid @person
+      render :edit
+    end
   end
 
   private
