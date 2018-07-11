@@ -1,0 +1,16 @@
+<h1>Post Edit Form</h1>
+<% if @post.errors.any?%>
+  <ul>
+    <%@post.errors.full_messages.each do |message|%>
+      <li>
+        <%= message %>
+      </li>
+    <%end%>
+  </ul>
+<%end%>
+
+<%=form_tag("/authors/<%=@author.id%>") do %>
+  Name: <%=text_field_tag "name", @author.name%> <br />
+  Email: <%text_field_tag "email", @author.email%> <br />
+  Phone Number: <%=text_field_tag "phone_number", @author.phone_number %><br />
+<%= submit_tag "Update Author"%>
