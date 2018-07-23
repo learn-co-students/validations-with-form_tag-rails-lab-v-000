@@ -1,7 +1,7 @@
 class AuthorsController < ApplicationController
 
   before_action :set_author!, only: [:show, :edit, :update]
-  
+
   def show
   end
 
@@ -31,7 +31,7 @@ class AuthorsController < ApplicationController
       render :edit
     end
   end
-  
+
   private
 
   def set_author!
