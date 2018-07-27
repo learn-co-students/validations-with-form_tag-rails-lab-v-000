@@ -1,0 +1,8 @@
+<h1>Edit an Author</h1>
+<%= form_tag "/authors" do %>
+Name: <%= text_field_tag "name", @author.name %><br>
+Email: <%= text_field_tag "email", @author.email %><br>
+Phone Number: <%= text_field_tag "phone_number", @author.phone_number %><br>
+<%= submit_tag "submit" %>
+<% end %>
+
