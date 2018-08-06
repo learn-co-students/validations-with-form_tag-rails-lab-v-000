@@ -1,6 +1,6 @@
-<h2>Editing "<%= @post.title %>"</h2>
+<h2>Create a Post</h2>
 
-<%= form_tag post_path(@post), method: "PATCH" do %>
+<%= form_tag posts_path, method: "POST" do %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2> There were some errors:</h2>
@@ -38,5 +38,5 @@
     <%= text_area_tag "content", @post.content %>
   </div>
 
-  <%= submit_tag "Update" %>
+  <%= submit_tag "Create" %>
 <% end %>
