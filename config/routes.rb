@@ -5,5 +5,10 @@ Rails.application.routes.draw do
   get "/authors/:id/edit", to: "authors#edit", as: "edit_author"
   patch "/authors/:id", to: "authors#update"
 
+  get "/posts/new", to: "posts#new", as: "new_post"
+  post "/posts", to: "posts#create"
+  get "/posts/:id", to: "posts#show", as: "post"
+  get "/posts/:id/edit", to: "posts#edit", as: "edit_post"
+  patch "/posts/:id", to: "posts#update"
+
 end
-  
