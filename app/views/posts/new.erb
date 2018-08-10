@@ -1,7 +1,5 @@
-binding.pry
-
-<h2>Editing "<%= @post.title %>"</h2>
-<%= form_tag post_path(@post), method: "patch" do %>
+<h2>New Post</h2>
+<%= form_tag posts_path do %>
 
 <% if @post.errors.any? %>
   <div id="error_explanation">
