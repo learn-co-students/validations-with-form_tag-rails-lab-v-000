@@ -2,11 +2,13 @@
 <%= form_tag authors_path, method: "post" do %>
 
   <% if @author.errors.any? %>
-    <ul>
-      <% @author.errors.full_messages.each do |error| %>
-        <li><%= error %></li>
-      <% end %>
-    </ul>
+    <div id="error_explanation">
+      <ul>
+        <% @author.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 
   <div class="field">
