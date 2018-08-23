@@ -14,11 +14,6 @@ class AuthorsController < ApplicationController
       redirect_to author_path(@author)
     else
       @error_explanations = @author.errors.full_messages
-      @errors = {
-        name: !@author&.errors[:name]&.empty?,
-        email: !@author&.errors[:email]&.empty?,
-        phone_number: !@author&.errors[:phone_number]&.empty?
-      }
       render :'authors/new'
     end
   end

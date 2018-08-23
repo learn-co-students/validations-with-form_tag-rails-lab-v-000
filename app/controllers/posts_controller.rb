@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to post_path(@post)
     else
+      @error_explanations = @post.errors.full_messages
       render :'posts/edit'
     end
   end
