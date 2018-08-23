@@ -8,9 +8,19 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    @author = Author.create(author_params)
-
-    redirect_to author_path(@author)
+    @author = Author.new(author_params)
+    
+    if @author.save
+      redirect_to author_path(@author)
+    else
+      @error_explanations = @author.errors.full_messages
+      @errors = {
+        name: !@author&.errors[:name]&.empty?,
+        email: !@author&.errors[:email]&.empty?,
+        phone_number: !@author&.errors[:phone_number]&.empty?
+      }
+      render :'authors/new'
+    end
   end
 
   private
