@@ -1,0 +1,11 @@
+<h2>Create an Author</h2>
+
+<%= form_tag authors_path, method: "post" do %>
+
+	Name: <%= text_field_tag "name", @author.name %><br>
+  	Email: <%= text_field_tag "email", @author.email %>
+  	Phone Number: <%= text_field_tag "email", @author.phone_number %>
+
+  <%= submit_tag "Create Author" %>
+
+<% end %>
