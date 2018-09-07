@@ -1,0 +1,7 @@
+<%= form_tag '/posts' do %>
+  Title: <%= text_field_tag :title %> <br>
+  Category: <%= text_field_tag :category %> <br>
+  Content: <%= text_area_tag :content %> <br>
+  <%= submit_tag "Create" %>
+
+<% end %>
