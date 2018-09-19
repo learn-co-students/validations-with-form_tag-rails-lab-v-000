@@ -12,17 +12,25 @@
 
 <h2>Create an Author</h2>
 <%= form_tag authors_path, method: "post" do %>
-  <div class="field">
+<%if @author.errors[:name].any?%>
+  <div class='field_with_errors'>
+<%else%>
+  <div class='field'>
+<%end%>
     <%= label_tag "name", "Name" %>
     <%= text_field_tag "name", @author.name %>
   </div>
 
-  <div class="field">
+  <%if @author.errors[:email].any?%>
+    <div class='field_with_errors'>
+  <%else%>
+    <div class='field'>
+  <%end%>
     <%= label_tag "email", "Email" %>
     <%= text_field_tag "email", @author.email %>
   </div>
 
-  <%if @post.errors[:phone_number].any?%>
+  <%if @author.errors[:phone_number].any?%>
     <div class='field_with_errors'>
   <%else%>
     <div class='field'>
