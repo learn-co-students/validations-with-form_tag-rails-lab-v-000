@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :find!, only: [:show, :edit, :update]
   def show
     @post = Post.find(params[:id])
   end
@@ -8,11 +9,16 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
-
     @post.update(post_params)
+    if @post.valid?
+      redirect_to post_path(@post.id)
+    else 
+      render :edit
+    end
+  end
 
-    redirect_to post_path(@post)
+  def find!
+    @post = Post.find(params[:id])
   end
 
   private
