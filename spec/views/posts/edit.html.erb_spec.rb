@@ -35,7 +35,7 @@ RSpec.describe "posts/edit", type: :feature do
     it "prefills fields" do
       expect(find("input[name=title]").value).to be_empty
       expect(find("input[name=category]").value).to eq(invalid_attributes[:category])
-      expect(find("textarea[name=content]").value).to eq(invalid_attributes[:content])
+      expect(find("input[name=content]").value).to eq(invalid_attributes[:content])
     end
 
     it "has error class on bad fields" do
@@ -45,4 +45,3 @@ RSpec.describe "posts/edit", type: :feature do
     end
   end
 end
-
