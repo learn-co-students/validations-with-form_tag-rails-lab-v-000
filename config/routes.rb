@@ -31,7 +31,8 @@ Rails.application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
-
+  resources :authors, only:[:show, :new, :edit, :create, :update]
+  resources :posts, only:[:show, :new, :edit, :create, :update]
   # Example resource route with more complex sub-resources:
   #   resources :products do
   #     resources :comments
