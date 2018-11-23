@@ -1,4 +1,4 @@
-<h2>New Author Form</h2>
+<h2>Edit Author Form</h2>
 <%= form_tag("/authors") do %>
 	<% if @author.errors.any? %>
 	<div id="error_explanation">
@@ -18,9 +18,8 @@
 		<%= label_tag "email", "Email" %>
 		<%= text_field_tag "email", @author.email %>
 	</div>
-	<div class="field<%=' field_with_errors' if @author.errors[:phone_number].any?%>">
+	<div class="field<%=' field_with_errors' if @author.errors[:phone_number]%>">
 		<%= label_tag "phone_number", "Phone Number" %>
 		<%= text_field_tag "phone_number", @author.phone_number %><br><br>
-	</div>
 	<%= submit_tag "Create" %>
 <% end %>
