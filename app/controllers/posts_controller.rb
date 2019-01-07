@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = post.create(post_params)
+    @post = Post.create(post_params)
 
     if @post.valid?
       @post.save
