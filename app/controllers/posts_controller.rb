@@ -10,20 +10,26 @@ class PostsController < ApplicationController
   def create
     @post = post.create(post_params)
 
-    redirect_to post_path(@post)
+    if @post.valid?
+      @post.save
+      redirect_to post_path(@post)
+    else
+      render :new
+    end
   end
 
   def update
     @post = Post.find(params[:id])
-
-    @post.update(post_params)
-
-    redirect_to post_path(@post)
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render :edit
+    end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :category, :content)
+    params.permit(:title, :category, :content)
   end
 end
