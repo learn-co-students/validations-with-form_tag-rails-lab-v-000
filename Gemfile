@@ -15,3 +15,4 @@ end
 
 group :development do
 end
+gem 'bundler', '~> 1.16', '>= 1.16.1'
