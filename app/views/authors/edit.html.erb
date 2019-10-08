@@ -16,7 +16,7 @@
   <% else %>
     <div class="field_with_errors">
   <% end %>
-    <%= label_tag "name", "Title" %>
+    <%= label_tag "name", "Name" %>
     <%= text_field_tag "name", @author.name %>
   </div>
 
@@ -25,8 +25,7 @@
   <% else %>
     <div class="field_with_errors">
   <% end %>
-    <%= label_tag "email", "Category" %>
-    <p>Must be either "Fiction" or "Non-Fiction".</p>
+    <%= label_tag "email", "Email" %>
     <%= text_field_tag "email", @author.email %>
   </div>
 
@@ -35,7 +34,7 @@
   <% else %>
     <div class="field_with_errors">
   <% end %>
-    <%= label_tag "phone_number", "Content" %>
+    <%= label_tag "phone_number", "Phone Number" %>
     <br />
     <%= text_area_tag "phone_number", @author.phone_number %>
   </div>
