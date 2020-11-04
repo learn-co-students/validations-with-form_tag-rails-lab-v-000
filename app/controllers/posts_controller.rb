@@ -8,7 +8,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.create(post_params)
+     @post = Post.find(params[:id])
+    # @post = Post.update(post_params)
     if 
       @post.update(post_params)
   
